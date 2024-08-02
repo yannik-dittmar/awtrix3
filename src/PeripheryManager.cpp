@@ -72,7 +72,7 @@ Adafruit_SHT31 sht31;
 #define USED_PHOTOCELL LightDependentResistor::GL5528
 #define PHOTOCELL_SERIES_RESISTOR 1000
 #else
-#define USED_PHOTOCELL LightDependentResistor::GL5516
+#define USED_PHOTOCELL LightDependentResistor::GL5528
 #define PHOTOCELL_SERIES_RESISTOR 10000
 #endif
 
@@ -384,9 +384,13 @@ void PeripheryManager_::setup()
     pinMode(RESET_PIN, INPUT);
     if (DFPLAYER_ACTIVE)
     {
+        if (DEBUG_MODE)
+            DEBUG_PRINTLN(F("DFPlayer active"));
         dfmp3.begin();
         delay(100);
         setVolume(SOUND_VOLUME);
+        delay(100);
+        playBootSound();
     }
     button_left.begin();
     button_right.begin();
@@ -440,13 +444,7 @@ void PeripheryManager_::setup()
         TEMP_SENSOR_TYPE = TEMP_SENSOR_TYPE_SHT31;
     }
 
-#ifdef awtrix2_upgrade
-    dfmp3.begin();
-#else
-
-#endif
-    if (!LDR_ON_GROUND)
-        photocell.setPhotocellPositionOnGround(false);
+    photocell.setPhotocellPositionOnGround(false);
 }
 
 void PeripheryManager_::tick()
