@@ -1071,9 +1071,6 @@ void DisplayManager_::loadNativeApps()
     updateApp("Temperature", TempApp, SHOW_TEMP, 2);
     updateApp("Humidity", HumApp, SHOW_HUM, 3);
   }
-#ifdef ULANZI
-  updateApp("Battery", BatApp, SHOW_BAT, 4);
-#endif
 
   ui->setApps(Apps);
   setAutoTransition(true);

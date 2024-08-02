@@ -11,9 +11,9 @@
 #define URL_fw_Version "https://raw.githubusercontent.com/Blueforcer/awtrix3/main/version"
 
 #ifdef ULANZI
-#define URL_fw_Bin "https://raw.githubusercontent.com/Blueforcer/awtrix3/main/docs/ulanzi_flasher/firmware/firmware.bin"
+#define URL_fw_Bin "XXX"
 #else
-#define URL_fw_Bin "https://raw.githubusercontent.com/Blueforcer/awtrix3/main/docs/awtrix2_flasher/firmware/firmware.bin"
+#define URL_fw_Bin "XXX"
 #endif
 
 // The getter for the instantiated singleton instance
