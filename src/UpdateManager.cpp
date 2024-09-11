@@ -8,13 +8,8 @@
 #include <Ticker.h>
 #include "Globals.h"
 
-#define URL_fw_Version "https://raw.githubusercontent.com/Blueforcer/awtrix3/main/version"
-
-#ifdef ULANZI
-#define URL_fw_Bin "XXX"
-#else
-#define URL_fw_Bin "XXX"
-#endif
+#define URL_fw_Version "https://raw.githubusercontent.com/yannik-dittmar/awtrix3/main/version"
+#define URL_fw_Bin "https://raw.githubusercontent.com/yannik-dittmar/awtrix3/main/docs/awtrix2_flasher/firmware/firmware.bin"
 
 // The getter for the instantiated singleton instance
 UpdateManager_ &UpdateManager_::getInstance()
@@ -116,11 +111,11 @@ bool UpdateManager_::checkUpdate(bool withScreen)
         }
         else
         {
-            if (DEBUG_MODE) DEBUG_PRINTLN(F("Error in downloading version file"));
+            if (DEBUG_MODE) DEBUG_PRINTF("Error in downloading version file. HTTP_CODE: %d\n", httpCode);
             if (withScreen)
             {
                 DisplayManager.clear();
-                 DisplayManager.resetTextColor();
+                DisplayManager.resetTextColor();
                 DisplayManager.printText(0, 6, "ERR CNCT", true, true);
                 DisplayManager.show();
                 delay(1000);
@@ -139,7 +134,7 @@ bool UpdateManager_::checkUpdate(bool withScreen)
             if (withScreen)
             {
                 DisplayManager.clear();
-                 DisplayManager.resetTextColor();
+                DisplayManager.resetTextColor();
                 DisplayManager.printText(0, 6, "NO UP :(", true, true);
                 DisplayManager.show();
                 delay(1000);
