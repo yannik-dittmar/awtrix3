@@ -69,8 +69,8 @@ void setup()
   PeripheryManager.setup();
   ServerManager.loadSettings();
   DisplayManager.setup();
-  DisplayManager.HSVtext(9, 6, VERSION, true, 0);
-  delay(500);
+  DisplayManager.HSVtext(7, 6, VERSION, true, 0);
+  delay(1000);
   xTaskCreatePinnedToCore(BootAnimation, "Task", 10000, NULL, 1, &taskHandle, 0);
   ServerManager.setup();
   if (ServerManager.isConnected)
