@@ -108,6 +108,12 @@ void setup()
   }
   delay(200);
   DisplayManager.setBrightness(BRIGHTNESS);
+
+  if (ServerManager.isConnected)
+  {
+    if (UpdateManager.checkUpdate(true))
+      UpdateManager.updateFirmware();
+  }
 }
 
 void loop()
