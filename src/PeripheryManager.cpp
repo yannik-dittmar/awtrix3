@@ -132,9 +132,6 @@ void left_button_pressed()
 {
     if (!BLOCK_NAVIGATION)
     {
-        if (DFPLAYER_ACTIVE)
-            PeripheryManager.playFromFile(DFMINI_MP3_CLICK);
-
         DisplayManager.leftButton();
         MenuManager.leftButton();
         if (DEBUG_MODE)
@@ -151,9 +148,6 @@ void right_button_pressed()
 {
     if (!BLOCK_NAVIGATION)
     {
-        if (DFPLAYER_ACTIVE)
-            PeripheryManager.playFromFile(DFMINI_MP3_CLICK);
-
         DisplayManager.rightButton();
         MenuManager.rightButton();
         if (DEBUG_MODE)
@@ -170,9 +164,6 @@ void select_button_pressed()
 {
     if (!BLOCK_NAVIGATION)
     {
-        if (DFPLAYER_ACTIVE)
-            PeripheryManager.playFromFile(DFMINI_MP3_CLICK);
-
         DisplayManager.selectButton();
         MenuManager.selectButton();
         if (DEBUG_MODE)
@@ -193,8 +184,6 @@ void reset_button_pressed_long()
 
 void select_button_pressed_long()
 {
-    if (DFPLAYER_ACTIVE)
-        PeripheryManager.playFromFile(DFMINI_MP3_CLICK);
     if (AP_MODE)
     {
         ++MATRIX_LAYOUT;
@@ -218,9 +207,6 @@ void select_button_double()
         DEBUG_PRINTLN(F("Select button double pressed"));
     if (!BLOCK_NAVIGATION)
     {
-        if (DFPLAYER_ACTIVE)
-            PeripheryManager.playFromFile(DFMINI_MP3_CLICK);
-
         if (MATRIX_OFF)
         {
             DisplayManager.setPower(true);
