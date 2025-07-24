@@ -93,7 +93,7 @@ bool UpdateManager_::checkUpdate(bool withScreen)
     fwurl += URL_fw_Version;
     fwurl += "?";
     fwurl += String(rand());
-    if (DEBUG_MODE) DEBUG_PRINTLN(F("Check firmwareversion"));
+    if (DEBUG_MODE) DEBUG_PRINTF("Check firmwareversion: %s\n", fwurl.c_str());
 
     static WiFiClientSecure client; // Statische Variable
 
